@@ -1,11 +1,11 @@
+# help(list) 查看帮助
 
 # name= input('请输入名字：')
 # print('hallo',name)
 #  %s字符占位，%d数值,%f保留6位小数，%.nf保留全部小数
 print_note= 'i am %s age %d' % ("ke", 18.12345678)
 print(print_note)
-tpl = "numbers: {:b},{:o},{:d},{:x},{:X}, {:%}".format(15, 15, 15, 15, 15, 15.87623, 2)
-print(tpl)
+
 str='123456'
 print(str)                 # 输出字符串
 print(str[0:-1])           # 输出第一个到倒数第二个的所有字符
@@ -47,4 +47,59 @@ print(10/3,'正常除法',10//3,'只取整数',10%3,'只取余数',3**2,'次幂'
 # is 是判断两个标识符是不是引用自一个对象，is not
 
 # 函数
-format 把后面的参数或值传入前面
+# format 把后面的参数或值传入前面,{:.2f}保留小数两位,{:.2%}百分比格式
+format_n = "{} {} {:.2f}".format("hello", "world",123.3364)  # 设置指定位置
+print(format_n)
+
+# 集合 list用[],tuple用()
+# list是一个可变的有序表 [2]索引显示，.append整体增加,exend逐个扩展，insert插入 ..pop[]指定位置删除，remove指定元素删除
+list_n = ['btc','eth',123,456]
+print(list_n[1:4]) #按位置索引列表
+list_n[2:3] = ['更新1','更新2']  #利用切片来赋值
+print(list_n[3])
+del list_n[2]
+list_n.append ('新增的')
+list_n.insert (1,'插入的')
+print(list_n)
+
+# tuple 不可修改的列表元组，方法和list类似tuple(seq)
+tuple_n = ('元组1','元组2','元组1c',4,5)
+(aa,bb,cc,dd,ee) = tuple_n  #解压元组
+print(bb,cc,dd)
+
+# 条件判断
+age = 20
+if age >= 6:
+    print('teenager')
+elif age >= 18:
+    print('adult')
+else:
+    print('kid')
+
+# 循环 for 循环全部元素一次。while只要条件满足，就不断循环，条件不满足时退出循环
+sum2 = 0
+sb = 99
+while sb>0:
+    sum2 = sb+sum2
+    sb=sb-1
+print(sum2)
+
+n = 1
+while n <= 100:
+    if n > 10:   # 当n = 11时，条件满足，执行break语句
+        break    # break语句会结束当前循环
+    print(n)
+    n = n + 1
+#print('END')
+
+m=0
+while m < 100:
+    m = m + 1
+    if m % 2 == 0:   # 如果n是偶数，执行continue语句
+        continue     # continue语句会直接继续下一轮循环，跳过一次下面的print()语句不会执行
+    print(m)
+
+nb = 10
+# input_age = 0
+# input_age = input('你的年龄'，)
+
